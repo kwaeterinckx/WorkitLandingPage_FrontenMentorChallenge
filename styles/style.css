@@ -1,3 +1,59 @@
+@font-face {
+    font-family: "Fraunces";
+    src: url(../fonts/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf);
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Manrope";
+    src: url(../fonts/Manrope-VariableFont_wght.ttf);
+    font-weight: 200 800;
+    font-style: normal;
+}
+
+:root {
+    --clr-green: hsl(150, 100%, 63%);
+    --clr-purlpe-900: hsl(273, 85%, 13%);
+    --clr-purlpe-500: hsl(271, 12%, 34%);
+    --clr-purlpe-100: hsl(276, 100%, 99%);
+    --clr-white: hsl(0, 0%, 100%);
+
+    --ff-title: "Fraunces";
+    --ff-text: "Manrope";
+
+    --fs-h1: 48px;
+    --fs-h2: 32px;
+    --fs-h3: 24px;
+    --fs-text: 16px;
+
+    --fw-title: 600;
+    --fw-bold: 700;
+    --fw-normal: 400;
+
+    --lh-h1: 100%;
+    --lh-h2: 120%;
+    --lh-text: 180%;
+
+    --spc-3700: 296px;
+    --spc-2100: 168px;
+    --spc-1800: 144px;
+    --spc-1600: 128px;
+    --spc-1400: 112px;
+    --spc-1100: 88px;
+    --spc-1000: 80px;
+    --spc-800: 64px;
+    --spc-700: 56px;
+    --spc-550: 44px;
+    --spc-500: 40px;
+    --spc-400: 32px;
+    --spc-350: 28px;
+    --spc-250: 20px;
+    --spc-200: 16px;
+    --spc-150: 12px;
+    --spc-100: 8px;
+}
+
 *,
 *::before,
 *::after {
@@ -6,7 +62,149 @@
     box-sizing: border-box;
 }
 
+body {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "main"
+        "footer";
+    min-height: 100vh;
+    font-family: var(--ff-text);
+    font-size: var(--fs-text);
+    font-weight: var(--fw-normal);
+    line-height: var(--lh-text);
+    color: var(--clr-purlpe-900);
+    background-color: var(--clr-cream);
+}
+
 img {
     display: block;
     max-width: 100%;
+}
+
+.curve {
+    position: absolute;
+}
+
+/** MAIN */
+.main {
+    grid-area: main;
+}
+
+.container {
+    margin-inline: auto;
+    padding-inline: var(--spc-250);
+    max-width: 1120px;
+}
+
+.header {
+    position: relative;
+    isolation: isolate;
+    background-color: var(--clr-purlpe-900);
+    margin-bottom: calc(100vw * 6 / 100);
+}
+
+.curve__header {
+    fill: var(--clr-purlpe-900);
+}
+
+.top {
+    padding-top: var(--spc-400);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 97px;
+    height: 26px;
+    background-image: url(/images/logo-light.svg);
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+
+.header__link {
+    font-weight: var(--fw-bold);
+    color: var(--clr-white);
+    text-decoration-color: var(--clr-green);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 8px;
+    transition: color 250ms ease-in-out;
+}
+
+.header__link:hover,
+.header__link:focus-visible {
+    color: var(--clr-green);
+
+}
+
+.hero {
+    padding-block: var(--spc-700) var(--spc-1800);
+}
+
+.hero__title {
+    font-family: var(--ff-title);
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-title);
+    font-variation-settings: "opsz" 144;
+    line-height: var(--lh-h1);
+    color: var(--clr-purlpe-100);
+    text-align: center;
+    margin-bottom: var(--spc-500);
+}
+
+.hero__title span {
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: 3px;
+    text-decoration-color: var(--clr-green);
+    text-underline-offset: 6px;
+}
+
+.values {
+    position: relative;
+    isolation: isolate;
+    background-color: var(--clr-purlpe-100);
+    margin-bottom: calc(100vw * 6 / 100);
+}
+
+.curve__values {
+    fill: var(--clr-purlpe-100);
+}
+
+.curve__cta {
+    fill: var(--clr-white);
+}
+
+/** FOOTER */
+
+.footer {
+    grid-area: footer;
+    margin-top: auto;
+    padding: 2rem 1rem;
+    background-color: var(--clr-purlpe-900);
+}
+
+.footer__github,
+.footer__info {
+    text-align: center;
+    color: var(--clr-purlpe-100);
+}
+
+.footer__github {
+    margin-bottom: 1rem;
+}
+
+.footer__link {
+    color: var(--clr-green);
+    text-decoration: none;
+}
+
+.footer__link:hover,
+.footer__link:focus-visible {
+    text-decoration: underline;
 }
