@@ -46,6 +46,7 @@
     --spc-1000: 80px;
     --spc-800: 64px;
     --spc-700: 56px;
+    --spc-600: 48px;
     --spc-550: 44px;
     --spc-500: 40px;
     --spc-400: 32px;
@@ -238,12 +239,13 @@ img {
 }
 
 .value__number {
+    width: 48px;
+    aspect-ratio: 1;
     font-family: var(--ff-title);
     font-size: var(--fs-num);
     font-weight: var(--fw-title);
     font-variation-settings: "opsz" 144;
     line-height: 48px;
-    aspect-ratio: 1;
     text-align: center;
     border: 1px solid var(--clr-purlpe-900);
     border-radius: 50%;
@@ -311,6 +313,7 @@ img {
     font-size: var(--fs-h2);
     font-weight: var(--fw-title);
     font-variation-settings: "opsz" 144;
+    line-height: var(--lh-h2);
     color: var(--clr-white);
 }
 
